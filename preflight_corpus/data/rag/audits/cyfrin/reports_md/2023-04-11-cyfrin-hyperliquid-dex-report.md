@@ -2,32 +2,7 @@
 title: Cyfrin Hyperliquid Audit Report
 author: Cyfrin.io
 date: April 11, 2023
-linkcolor: blue
-urlcolor: blue
-header-includes:
-  - \usepackage{titling}
-  - \usepackage{graphicx}
 ---
-
-\begin{titlepage}
-    \centering
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.5\textwidth]{logo.pdf}
-    \end{figure}
-    \vspace*{2cm}
-    {\Huge\bfseries HyperLiquid Audit Report\par}
-    \vspace{1cm}
-    {\Large Version 2.1\par}
-    \vspace{2cm}
-    {\Large\itshape Cyfrin.io\par}
-    \vfill
-    {\large April 11, 2023\par}
-\end{titlepage}
-
-\maketitle
-
-<!-- Your report starts here! -->
 
 Prepared by: [Cyfrin](https://cyfrin.io)
 
