@@ -1,4 +1,27 @@
 ---
+source_id: 1021 # ID for parent source from sources.csv
+source_url: "https://github.com/ethereum/ERCs"   # Canonical URL for parent source
+item_id: "1021-2025-08-15-erc-20"  # source_id-ISOdate-stable slug (i.e: "1020-2023-06-07-uniswap-v3-limit-orders") 
+title: "ERC-20: Token Standard"  # Human-readable title
+author_or_org: ["Fabian Vogelsteller", "Vitalik Buterin"] # Who created this file?
+item_source_url: "https://github.com/ethereum/ERCs/blob/master/ERCS/erc-20.md"   # Canonical URL for this file
+local_path: "preflight_corpus/data/rag/ethereum/ercs/erc-20.md"   # Path inside repo
+type: "standard"
+intended_use: "RAG" # How this file is used
+license: "CC0-1.0"     # SPDX or short label
+date_last_updated: "2025-08-15"  # ISO dates only
+source_family: "ethereum"
+tags: ["Ethereum", "Standards", "ERC"]       # 2–5 controlled tags
+status: "active"  # Only for standards/specs
+language: "en"              # Language code
+
+# Optional crosswalk mappings
+x:
+  crosswalk:
+    ethtrust: []
+    scwe: []
+    swc: []
+---
 eip: 20
 title: Token Standard
 author: Fabian Vogelsteller <fabian@ethereum.org>, Vitalik Buterin <vitalik.buterin@ethereum.org>
@@ -6,7 +29,7 @@ type: Standards Track
 category: ERC
 status: Final
 created: 2015-11-19
----
+
 
 ## Simple Summary
 

@@ -1,8 +1,32 @@
 ---
+source_id: 1020 # ID for parent source from sources.csv
+source_url: "https://github.com/Cyfrin/cyfrin-audit-reports/tree/main/reports_md"   # Canonical URL for parent source
+item_id: "1020-2023-03-13-beanstalk_wells_v0.1"  # source_id-ISOdate-stable slug (i.e: "1020-2023-06-07-uniswap-v3-limit-orders") 
+title: "Beanstalk Wells Initial Audit Report"  # Human-readable title
+author_or_org: ["Giovanni Di Siena", "Hans", "Alex Roan", "Patrick Collins"] # Who created this file?
+item_source_url: "https://github.com/Cyfrin/cyfrin-audit-reports/blob/main/reports_md/2023-03-13-beanstalk_wells_v0.1.md"   # Canonical URL for this file
+local_path: "preflight_corpus/data/rag/audits/cyfrin/reports_md/2023-03-13-beanstalk_wells_v0.1.md"   # Path inside repo
+type: "audit"
+intended_use: "RAG" # How this file is used
+license: "All Rights Reserved"     # SPDX or short label
+date_last_updated: "2023-03-13"  # ISO dates only
+source_family: "cyfrin"
+tags: ["Audits", "Reports", "Cyfrin"]       # 2–5 controlled tags
+status: ""  # Only for standards/specs
+language: "en"              # Language code
+
+# Optional crosswalk mappings
+x:
+  crosswalk:
+    ethtrust: []
+    scwe: []
+    swc: []
+---
+
 title: Beanstalk Wells Initial Audit Repor
 author: Cyfrin.io
 date: March 13, 2023
----
+
 
 # Beanstalk Wells Initial Audit Repor
 

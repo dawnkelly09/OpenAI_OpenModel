@@ -1,6 +1,27 @@
-::: index
-! contract;abstract, ! abstract contrac
-:::
+---
+source_id: 1001 # ID for parent source from sources.csv
+source_url: "https://github.com/ethereum/solidity/tree/develop/docs"   # Canonical URL for parent source
+item_id: "1001-2022-04-04-abstract-contracts"  # source_id-ISOdate-stable slug (i.e: "1020-2023-06-07-uniswap-v3-limit-orders") 
+title: "Abstract Contracts"  # Human-readable title
+author_or_org: ["Solidity"] # Who created this file?
+item_source_url: "https://github.com/ethereum/solidity/blob/develop/docs/contracts/abstract-contracts.rst"   # Canonical URL for this file
+local_path: "preflight_corpus/data/rag/solidity_docs/contracts/abstract-contracts.md"   # Path inside repo
+type: "doc"
+intended_use: "RAG" # How this file is used
+license: "GPL-3.0"     # SPDX or short label
+date_last_updated: "2022-04-04"  # ISO dates only
+source_family: "ethereum"
+tags: ["Solidity", "Reference", "Compiler"]       # 2–5 controlled tags
+status: ""  # Only for standards/specs
+language: "en"              # Language code
+
+# Optional crosswalk mappings
+x:
+  crosswalk:
+    ethtrust: []
+    scwe: []
+    swc: []
+---
 
 # Abstract Contracts {#abstract-contract}
 

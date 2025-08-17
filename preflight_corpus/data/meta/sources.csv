@@ -1,4 +1,4 @@
-doc_id,title,source_url,type,intended_use,license,notes,local_path,version_or_date,tags
+source_id,title,source_url,type,intended_use,license,notes,local_path,version_or_date,tags
 1001,Solidity Docs,https://github.com/ethereum/solidity/tree/develop/docs,doc,RAG,GPL-3.0,"""Core language reference and style guidelines""",preflight_corpus/data/rag/solidity_docs,v 0.8.30,"Solidity, Reference, Compiler"
 1002,SWC-Registry,https://github.com/SmartContractSecurity/SWC-registry,doc,RAG,MIT License,"""Legacy vulnerability classification registry. All vulnerabilities were incorporated into v1 of the EEA EthTrust Security Level spec published in August 2022.""",preflight_corpus/data/rag/swc,"Aug 6, 2024","Vulnerabilities, Legacy, Classification"
 1003,EEA EthTrust Security Levels Specification v1,https://entethalliance.org/specs/ethtrust-sl/v1/,standard,RAG,Apache 2.0,"""EEA spec, version 1; cite in findings; avoid bulk redistribution""",preflight_corpus/data/rag/ethtrust/v1,v1,"Ethereum, Standards, Security, Conformance"
@@ -21,3 +21,10 @@ doc_id,title,source_url,type,intended_use,license,notes,local_path,version_or_da
 1020,Cyfrin Audit Reports (Markdown),https://github.com/Cyfrin/cyfrin-audit-reports/tree/main/reports_md,audit,RAG,All rights reserved,"""Public audit reports in Markdown. Use sparingly with citation""",preflight_corpus/data/rag/audits/cyfrin/reports_md,"Aug 6, 2025","Audits, Reports, Cyfrin"
 1021,Ethereum ERCs,https://github.com/ethereum/ERCs,standard,RAG,CC0-1.0 ,"""Interface specs (ERC-20/721/1155/777/4626/2981/1271/2612/2771/6909/4494)""",preflight_corpus/data/rag/ethereum/ercs,"Aug 15, 2025","Ethereum, Standards, ERC"
 1022,Ethereum EIPs,https://github.com/ethereum/EIPs,standard,RAG,CC0-1.0 ,"""Core proposals used in security/conformance checks (712/1167/1967/1822/2535/…)""",preflight_corpus/data/rag/ethereum/eips,"Aug 16, 2025","Ethereum, Standards, Governance, Proposals"
+1023,,,,,,,,,
+1024,,,,,,,,,
+1025,,,,,,,,,
+1026,,,,,,,,,
+1027,,,,,,,,,
+1028,,,,,,,,,
+1029,,,,,,,,,
