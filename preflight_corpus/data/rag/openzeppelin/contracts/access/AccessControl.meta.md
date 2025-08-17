@@ -5,7 +5,7 @@ item_id: "1011-v540-accesscontrol-sol"  # source_id-ISOdate-stable slug (i.e: "1
 title: "AccessControl Smart Contract"  # Human-readable title
 author_or_org: ["Open Zeppelin"] # Who created this file?
 item_source_url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/AccessControl.sol"   # Canonical URL for this file
-local_path: "preflight_corpus/data/rag/openzeppelin/contracts/access/AccessControl.meta.md"   # Path inside repo
+local_path: "preflight_corpus/data/rag/openzeppelin/contracts/access/AccessControl.sol"   # Path inside repo
 type: "code"
 intended_use: "both" # How this file is used
 license: "MIT License"     # SPDX or short label
