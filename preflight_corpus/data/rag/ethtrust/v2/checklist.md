@@ -1,4 +1,27 @@
-<a href="checklist.html" class="logo"><img src="eea_logo.svg" id="eea-logo" width="180" height="90" alt="EEA" /></a>
+---
+source_id: 1004 # ID for parent source from sources.csv
+source_url: "https://entethalliance.org/specs/ethtrust-sl/v2/"   # Canonical URL for parent source
+item_id: "1004-2023-12-13-ethtrust-v2-checklist"  # source_id-ISOdate-stable slug (i.e: "1020-2023-06-07-uniswap-v3-limit-orders") 
+title: "Checklist for EEA EthTrust Security Levels Version 2"  # Human-readable title
+author_or_org: ["Enterprise Ethereum Alliance"] # Who created this file?
+item_source_url: "https://entethalliance.org/specs/ethtrust-sl/v2/checklist.html"   # Canonical URL for this file
+local_path: "preflight_corpus/data/rag/ethtrust/v2/checklist.md"   # Path inside repo
+type: "checklist"
+intended_use: "RAG" # How this file is used
+license: "Apache 2.0"     # SPDX or short label
+date_last_updated: "2023-12-13"  # ISO dates only
+source_family: "ethtrust"
+tags: ["Standards","EthTrust","Security","Conformance"]       # 2–5 controlled tags
+status: "active"  # Only for standards/specs
+language: "en"              # Language code
+
+# Optional crosswalk mappings
+x:
+  crosswalk:
+    ethtrust: []
+    scwe: []
+    swc: []
+---
 
 # Checklist for EEA EthTrust Security Levels Version 2
 
