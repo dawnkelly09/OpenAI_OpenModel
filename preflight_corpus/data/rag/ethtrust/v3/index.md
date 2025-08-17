@@ -1,4 +1,27 @@
-<a href="index.html" class="logo"><img src="https://entethalliance.org/wp-content/uploads/2024/10/EEALogo360x140.png" id="eea-logo" width="240" height="97" alt="EEA" /></a>
+---
+source_id: 1005 # ID for parent source from sources.csv
+source_url: "https://entethalliance.org/specs/ethtrust-sl/v3/"   # Canonical URL for parent source
+item_id: "1004-2025-03-31-ethtrust-v3-index"  # source_id-ISOdate-stable slug (i.e: "1020-2023-06-07-uniswap-v3-limit-orders") 
+title: "EEA EthTrust Security Levels Specification v3"  # Human-readable title
+author_or_org: ["Enterprise Ethereum Alliance"] # Who created this file?
+item_source_url: "https://entethalliance.org/specs/ethtrust-sl/v3/"   # Canonical URL for this file
+local_path: "preflight_corpus/data/rag/ethtrust/v3/index.md"   # Path inside repo
+type: "standard"
+intended_use: "RAG" # How this file is used
+license: "Apache 2.0"     # SPDX or short label
+date_last_updated: "2025-03-31"  # ISO dates only
+source_family: "ethtrust"
+tags: ["Standards","EthTrust","Security","Conformance"]       # 2–5 controlled tags
+status: "draft"  # Only for standards/specs
+language: "en"              # Language code
+
+# Optional crosswalk mappings
+x:
+  crosswalk:
+    ethtrust: []
+    scwe: []
+    swc: []
+---
 
 # EEA EthTrust Security Levels Specification Version 3
 
