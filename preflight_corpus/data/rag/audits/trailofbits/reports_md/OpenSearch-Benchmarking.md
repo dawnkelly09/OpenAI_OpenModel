@@ -1,3 +1,27 @@
+---
+source_id: 1014 # ID for parent source from sources.csv
+source_url: "https://github.com/trailofbits/publications/tree/master/reports"   # Canonical URL for parent source
+item_id: "1014-2025-08-15-opensearch-benchmarking"  # source_id-ISOdate-stable slug (i.e: "1020-2023-06-07-uniswap-v3-limit-orders") 
+title: "OpenSearch Benchmarking Assessment"  # Human-readable title
+author_or_org: ["Evan Downing", "Riccardo Schirone", "Francesco Bertolaccini", "Ronald Eytchison"] # Who created this file?
+item_source_url: "https://github.com/trailofbits/publications/blob/master/reports/OpenSearch-Benchmarking.pdf"   # Canonical URL for this file 
+local_path: "preflight_corpus/data/rag/audits/trailofbits/reports_md/OpenSearch-Benchmarking.md"   # Path inside repo
+type: "report"
+intended_use: "RAG" # How this file is used
+license: "CC BY-SA 4.0"     # SPDX or short label
+date_last_updated: "2025-08-15"  # ISO dates only
+source_family: "trailofbits"
+tags: ["Audits", "Findings", "Real-World"]       # 2–5 controlled tags
+status: ""  # Only for standards/specs
+language: "en"              # Language code
+
+# Optional crosswalk mappings
+x:
+  crosswalk:
+    ethtrust: [""]
+    scwe: [""]
+    swc: [""]
+---
 # OpenSearch
 
 Benchmark Assessment (Summary Report)

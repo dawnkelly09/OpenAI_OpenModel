@@ -1,11 +1,33 @@
 ---
+source_id: 1021 # ID for parent source from sources.csv
+source_url: "https://github.com/ethereum/ERCs"   # Canonical URL for parent source
+item_id: "1021-2025-08-15-eip-1"  # source_id-ISOdate-stable slug (i.e: "1020-2023-06-07-uniswap-v3-limit-orders") 
+title: "EIP-1: EIP Purpose and Guidelines"  # Human-readable title
+author_or_org: ["Martin Becze", "Hudson Jameson"] # Who created this file?
+item_source_url: "https://github.com/ethereum/ERCs/blob/master/ERCS/eip-1.md"   # Canonical URL for this file
+local_path: "preflight_corpus/data/rag/ethereum/ercs/eip-1.md"   # Path inside repo
+type: "standard"
+intended_use: "RAG" # How this file is used
+license: "CC0-1.0"     # SPDX or short label
+date_last_updated: "2025-08-15"  # ISO dates only
+source_family: "ethereum"
+tags: ["Ethereum", "Standards", "ERC"]       # 2–5 controlled tags
+status: "active"  # Only for standards/specs
+language: "en"              # Language code
+
+# Optional crosswalk mappings
+x:
+  crosswalk:
+    ethtrust: []
+    scwe: []
+    swc: []
+---
 eip: 1
 title: EIP Purpose and Guidelines
 status: Living
 type: Meta
 author: Martin Becze <mb@ethereum.org>, Hudson Jameson <hudson@ethereum.org>, et al.
 created: 2015-10-27
----
 
 ## What is an EIP?
 

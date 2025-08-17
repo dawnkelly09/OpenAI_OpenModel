@@ -1,3 +1,27 @@
+---
+source_id: 1020 # ID for parent source from sources.csv
+source_url: "https://github.com/Cyfrin/cyfrin-audit-reports/tree/main/reports_md"   # Canonical URL for parent source
+item_id: "1020-2023-06-07-cyfrin-uniswap-v3-limit-orders"  # source_id-ISOdate-stable slug (i.e: "1020-2023-06-07-uniswap-v3-limit-orders") 
+title: "Uniswap v3 Limit Orders"  # Human-readable title
+author_or_org: ["Cyfrin"] # Who created this file?
+item_source_url: "https://github.com/Cyfrin/cyfrin-audit-reports/blob/main/reports_md/2023-06-07-cyfrin-uniswap-v3-limit-orders.md"   # Canonical URL for this file
+local_path: "preflight_corpus/data/rag/audits/cyfrin/reports_md/2023-06-07-cyfrin-uniswap-v3-limit-orders.md"   # Path inside repo
+type: "audit"
+intended_use: "RAG" # How this file is used
+license: "All Rights Reserved"     # SPDX or short label
+date_last_updated: "2023-06-07"  # ISO dates only
+source_family: "cyfrin"
+tags: ["Audits", "Reports", "Cyfrin"]       # 2–5 controlled tags
+status: ""  # Only for standards/specs
+language: "en"              # Language code
+
+# Optional crosswalk mappings
+x:
+  crosswalk:
+    ethtrust: []
+    scwe: []
+    swc: []
+---
 ## Medium Risk
 
 ### Calls to `LimitOrderRegistry::newOrder` might revert due to overflow

@@ -1,9 +1,6 @@
-::: index
-! custom storage layout, ! storage layout specifier, ! layout at, ! base
-slo
-:::
 
-# Custom Storage Layou
+
+# Custom Storage Layout
 
 A contract can define an arbitrary location for its storage using the
 `layout` specifier. The contract\'s state variables, including those

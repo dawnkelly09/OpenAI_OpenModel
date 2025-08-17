@@ -1,3 +1,27 @@
+---
+source_id: 1019 # ID for parent source from sources.csv
+source_url: "https://github.com/immunefi-team/Past-Audit-Competitions"   # Canonical URL for parent source
+item_id: "1019-2025-03-31-36092-sc-insight-collateralizable-contracts-may-retain-status-unconditionally"  # source_id-ISOdate-stable slug (i.e: "1020-2023-06-07-uniswap-v3-limit-orders") 
+title: "#36092 (SC-Insight): Collateralizable Contracts May Retain Status Unconditionally"  # Human-readable title
+author_or_org: ["@auditweiler"] # Who created this file?
+item_source_url: "https://github.com/immunefi-team/Past-Audit-Competitions/blob/main/anvil/36092-sc-insight-collateralizable-contracts-may-retain-status-unconditionally.md"   # Canonical URL for this file
+local_path: "preflight_corpus/data/rag/bounties/immunefi/competitions/anvil/36092-sc-insight-collateralizable-contracts-may-retain-status-unconditionally.md"   # Path inside repo
+type: "audit"
+intended_use: "RAG" # How this file is used
+license: "CC BY-SA 4.0"     # SPDX or short label
+date_last_updated: "2025-03-31"  # ISO dates only
+source_family: "immunefi"
+tags: ["Bug Bounty", "Incidents", "Reports", "Immunefi"]       # 2–5 controlled tags
+status: ""  # Only for standards/specs
+language: "en"              # Language code
+
+# Optional crosswalk mappings
+x:
+  crosswalk:
+    ethtrust: []
+    scwe: []
+    swc: []
+---
 # #36092 \[SC-Insight] Collateralizable Contracts May Retain Status Unconditionally
 
 **Submitted on Oct 19th 2024 at 00:52:12 UTC by @auditweiler for** [**Audit Comp | Anvil**](https://immunefi.com/audit-competition/audit-comp-anvil)
