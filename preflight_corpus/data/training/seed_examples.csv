@@ -1,0 +1,67 @@
+task,id,input,buggy,fixed,labels,primary_severity,response,hint,meta_tags
+classify_vulns,oz-accesscontrol-001,"function mint(address to, uint256 amount) public {
+        _mint(to, amount);
+    }",,,Access Control,High,,,"solidity, openzeppelin, classification"
+explain,oz-accesscontrol-001-explain,Finding: mint is public without access control,,,,,Anyone can call mint() and create arbitrary tokens. This lets an attacker inflate supply or drain project value. Use AccessControl or Ownable to restrict minting to authorized roles.,,"solidity, openzeppelin, explaination"
+rewrite_fix,oz-accesscontrol-001-fix,,"function mint(address to, uint256 amount) public {
+        _mint(to, amount);
+    }","function mint(address to, uint256 amount) public {
+        // Check that the calling account has the minter role
+        if (!hasRole(MINTER_ROLE, msg.sender)) {
+            revert CallerNotMinter(msg.sender);
+        }
+        _mint(to, amount);
+    }",,,,Restrict privileged functions using AccessControl or Ownable.,"solidity, openzeppelin, remediation"
+classify_vulns,oz-ownable-001,"function specialThing() public {
+        // anyone can call this specialThing()
+    }",,,Access Control,Critical,,,"solidity, openzeppelin, classification"
+explain,oz-ownable-001-explain,"Finding: A critical function that modifies the contract's state, such as upgrading a contract or withdrawing funds, is not protected by the onlyOwner modifier. ",,,,,The severity is critical because it allows any user to perform unauthorized actions.,,"solidity, openzeppelin, explaination"
+rewrite_fix,oz-ownable-001-fix,,"function specialThing() public {
+        // anyone can call this specialThing()
+    }","function specialThing() public onlyOwner {
+        // only the owner can call specialThing()!
+    }",,,,Restrict privileged functions using onlyOwner,"solidity, openzeppelin, remediation"
+classify_vulns,oz-erc20-supply-001,"contract ERC20FixedSupply is ERC20 {
+    constructor() {
+        totalSupply += 1000;
+        balances[msg.sender] += 1000;
+    }
+}",,,ERC Conformance,Medium,,,"solidity, openzeppelin, classification"
+explain,oz-erc20-supply-001-explain,Finding: the variables `totalSupply` and `balances` are declared in the ERC20 constructor ,,,,,"Starting with Contracts v2, this pattern is disallowed. The variables `totalSupply` and `balances` are now private implementation details of ERC20, and you can’t directly write to them. Instead, there is an internal `_mint` function that will do this.",,"solidity, openzeppelin, explaination"
+rewrite_fix,oz-erc20-supply-001-fix,,"contract ERC20FixedSupply is ERC20 {
+    constructor() {
+        totalSupply += 1000;
+        balances[msg.sender] += 1000;
+    }
+}","contract ERC20FixedSupply is ERC20 {
+    constructor() ERC20(""Fixed"", ""FIX"") {
+        _mint(msg.sender, 1000);
+    }
+}",,,,Use the internal `_mint` function to privately handle supply and balance updates.,"solidity, openzeppelin, remediation"
+classify_vulns,oz-erc721-access-001,"function mint(address to, uint256 tokenId) public { _mint(to, tokenId); }",,,Access Control,High,,,"solidity, openzeppelin, classification"
+explain,oz-erc721-access-001-explain,Finding: mint() is public without access control,,,,,"Anyone can mint arbitrary NFTs to any address. This enables unauthorized supply inflation and potential phishing-style griefing. Restrict minting to an authorized role (e.g., onlyOwner or MINTER_ROLE)",,"solidity, openzeppelin, explaination"
+rewrite_fix,oz-erc721-access-001-fix,,"function mint(address to, uint256 tokenId) public { _mint(to, tokenId); }","function mint(address to, uint256 tokenId) public onlyOwner { _mint(to, tokenId); }",,,,,"solidity, openzeppelin, remediation"
+classify_vulns,oz-erc721-safemint-001,"function giveaway(address to, uint256 tokenId) external onlyOwner { _mint(to, tokenId); }",,,ERC Conformance,High,,,"solidity, openzeppelin, classification"
+explain,oz-erc721-safemint-001-explain,Finding: _mint used instead of _safeMint,,,,,"If 'to' is a contract that doesn't implement IERC721Receiver, the NFT can be permanently locked. Use _safeMint to enforce onERC721Received for contract recipients.",,"solidity, openzeppelin, explaination"
+rewrite_fix,oz-erc721-safemint-001-fix,,"function giveaway(address to, uint256 tokenId) external onlyOwner { _mint(to, tokenId); }","function giveaway(address to, uint256 tokenId) external onlyOwner { _safeMint(to, tokenId); }",,,,Prefer _safeMint for deliveries to unknown recipients.,"solidity, openzeppelin, remediation"
+classify_vulns,oz-erc721-safetransfer-001,"function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) public { _transfer(from, to, tokenId); // missing receiver check }",,,ERC Conformance,High,,,"solidity, openzeppelin, classification"
+explain,oz-erc721-safetransfer-001-explain,Finding: safeTransferFrom does not verify IERC721Receiver on contract recipients,,,,,"Without the onERC721Received check, tokens sent to non-compliant contracts can be stuck and irretrievable. Call the receiver hook after the transfer.",,"solidity, openzeppelin, explaination"
+rewrite_fix,oz-erc721-safetransfer-001-fix,,"function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) public { _transfer(from, to, tokenId); }","function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) public { _transfer(from, to, tokenId); ERC721Utils.checkOnERC721Received(msg.sender, from, to, tokenId, data); }",,,,Call IERC721Receiver.onERC721Received (via OZ utils) after transfers to contracts.,"solidity, openzeppelin, remediation"
+classify_vulns,oz-erc721-approval-001,"function setApprovalForAll(address operator, bool approved) public { _operatorApprovals[msg.sender][operator] = approved; }",,,"Access Control, Authorization Bypass",Medium,,,"solidity, openzeppelin, classification"
+explain,oz-erc721-approval-001-explain,Finding: setApprovalForAll does not validate operator,,,,,"A zero address or unintended operator could be approved, enabling unauthorized transfers. Validate non-zero operator and follow OZ's internal checks.",,"solidity, openzeppelin, explaination"
+rewrite_fix,oz-erc721-approval-001-fix,,"function setApprovalForAll(address operator, bool approved) public { _operatorApprovals[msg.sender][operator] = approved; }","function setApprovalForAll(address operator, bool approved) public { require(operator != address(0), \""invalid operator\""); _operatorApprovals[msg.sender][operator] = approved; emit ApprovalForAll(msg.sender, operator, approved); }",,,,Mirror OZ’s validation and event emission; avoid approving the zero address.,"solidity, openzeppelin, remediation"
+classify_vulns,oz-erc20-access-001,"function mint(address to, uint256 value) public { _mint(to, value); }",,,Access Control,High,,,"solidity, openzeppelin, classification"
+explain,oz-erc20-access-001-explain,Finding: mint() is public without access control,,,,,"Anyone can mint arbitrary tokens to any address, inflating supply and breaking token economics. Restrict minting to an authorized role (e.g., onlyOwner or MINTER_ROLE).",,"solidity, openzeppelin, explaination"
+rewrite_fix,oz-erc20-access-001-fix,,"function mint(address to, uint256 value) public { _mint(to, value); }","function mint(address to, uint256 value) public onlyOwner { _mint(to, value); }",,,,Gate privileged supply changes with Ownable/AccessControl.,"solidity, openzeppelin, remediation"
+classify_vulns,oz-erc20-allowance-001,"function changeAllowance(address spender, uint256 value) external { _approve(msg.sender, spender, value); }",,,"Authorization Bypass, ERC Conformance",Medium,,,"solidity, openzeppelin, classification"
+explain,oz-erc20-allowance-001-explain,Finding: allowance changed directly without reset,,,,,"If the owner tries to change allowance from X to Y, a spender can front-run with transferFrom() using the old allowance before the update, causing an unintended combined spend. ",,"solidity, openzeppelin, explaination"
+rewrite_fix,oz-erc20-allowance-001-fix,,"function changeAllowance(address spender, uint256 value) external { _approve(msg.sender, spender, value); }","function setAllowance(address spender, uint256 value) external { _approve(msg.sender, spender, 0); _approve(msg.sender, spender, value); } // or provide increase/decreaseAllowance",,,,"Use set-to-zero, then set-to-new, or expose increaseAllowance/decreaseAllowance.","solidity, openzeppelin, remediation"
+classify_vulns,oz-erc20-safe-001,"IERC20(token).transfer(recipient, amount); // return value ignored",,,"Unchecked Call, ERC Conformance",Medium,,,"solidity, openzeppelin, classification"
+explain,oz-erc20-safe-001-explain,Finding: ERC20 transfer result not checked,,,,,Some ERC-20 tokens return false instead of reverting on failure. Ignoring the boolean result can silently skip transfers and leave inconsistent state. ,,"solidity, openzeppelin, explaination"
+rewrite_fix,oz-erc20-safe-001-fix,,"IERC20(token).transfer(recipient, amount);","SafeERC20.safeTransfer(IERC20(token), recipient, amount);",,,,Wrap ERC-20 ops with SafeERC20 to handle non-standard implementations.,"solidity, openzeppelin, remediation"
+classify_vulns,oz-erc20-approve-001,"function approve(address spender, uint256 value) public returns (bool) { _allowances[msg.sender][spender] = value; emit Approval(msg.sender, spender, value); return true; }",,,"Access Control,Authorization Bypass",Medium,,,"solidity, openzeppelin, classification"
+explain,oz-erc20-approve-001-explain,Finding: approve() does not validate spender,,,,,Approving the zero address or an unintended spender can lock funds or enable misuse via proxies. Validate non-zero spender and follow OZ’s _approve guards.,,"solidity, openzeppelin, explaination"
+rewrite_fix,oz-erc20-approve-001-fix,,"function approve(address spender, uint256 value) public returns (bool) { _allowances[msg.sender][spender] = value; emit Approval(msg.sender, spender, value); return true; }","function approve(address spender, uint256 value) public returns (bool) { require(spender != address(0), \invalid spender\""); _approve(msg.sender, spender, value); return true; }""",,,,Mirror OZ’s _approve checks (non-zero owner/spender) and reuse internal helpers.,"solidity, openzeppelin, remediation"
+classify_vulns,oz-erc20-burn-001,"function burnFrom(address account, uint256 value) public { _burn(account, value); }",,,Access Control,High,,,"solidity, openzeppelin, classification"
+explain,oz-erc20-burn-001-explain,Finding: burnFrom() lacks authorization checks,,,,,"Any caller can reduce arbitrary users’ balances, destroying value. Restrict destructive actions with roles or require allowance via transferFrom-style semantics.",,"solidity, openzeppelin, explaination"
+rewrite_fix,oz-erc20-burn-001-fix,,"function burnFrom(address account, uint256 value) public { _burn(account, value); }","function burnFrom(address account, uint256 value) public onlyOwner { _burn(account, value); } // or require allowance/spender semantics",,,,Gate destructive actions (burn) by role or by user-granted allowance.,"solidity, openzeppelin, remediation"

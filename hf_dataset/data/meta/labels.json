@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "issues": [
+    "Reentrancy",
+    "Access Control",
+    "Unchecked Call",
+    "Delegatecall Misuse",
+    "Oracle Manipulation",
+    "Arithmetic/Overflow",
+    "Rounding/Precision",
+    "Authorization Bypass",
+    "DoS (Gas/State)",
+    "Permit/Signature Misuse",
+    "Initialization/Proxy",
+    "Upgradeability Misconfig",
+    "Pausing Misuse",
+    "Front-running/MEV",
+    "Invariant Violation",
+    "Fee Skimming",
+    "Ownership Takeover",
+    "ERC Conformance"
+  ],
+  "severity": [
+    "Critical",
+    "High",
+    "Medium",
+    "Low",
+    "Informational"
+  ]
+}
