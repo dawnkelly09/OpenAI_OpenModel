@@ -4,6 +4,7 @@ Thumbs.db
 
 # --- Python ---
 venv/
+env/
 .env/
 *.pyc
 __pycache__/
