@@ -1,0 +1,4 @@
+Do NOT show your reasoning. Output ONLY:
+{"labels":[...], "primary_severity":"..."}
+Use labels EXACTLY from this set:
+[Reentrancy, Access Control, Authorization Bypass, ERC Conformance, Integer Overflow/Underflow, Unchecked Call, Delegatecall Misuse, Oracle Manipulation, Timestamp Dependence, tx.origin Misuse, Insecure Randomness, DoS via Unbounded Loop, DoS via Unexpected Revert, Front-Running / MEV, Arithmetic/Overflow, Storage Collision, Signature Replay, Signature Malleability, Permit/Signature Misuse, Fee-On-Transfer Token Misaccounting, Slippage Misuse, Broken Invariant, Gas Griefing, Precision / Reward Accounting, Proxy/Clones|Deployment, Upgradeability|ERC Conformance, Allowance Race, Bypass Pause / Circuit Breaker]
