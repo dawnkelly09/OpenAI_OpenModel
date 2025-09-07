@@ -1,0 +1,15 @@
+{"id": "eval-oz-erc20-allowance-rot", "pred": {"labels": ["Allowance Race"], "primary_severity": "Medium"}}
+{"id": "eval-oz-erc721-safemint", "pred": {"labels": ["Authorization Bypass"], "primary_severity": "High"}}
+{"id": "eval-oz-erc1155-accept", "pred": {"labels": [], "primary_severity": "Informational"}}
+{"id": "eval-oz-erc6909-operator-zero", "pred": {"labels": [], "primary_severity": "Informational"}}
+{"id": "eval-oz-erc4626-preview", "pred": {"labels": [], "primary_severity": "Informational"}}
+{"id": "eval-owasp-txorigin", "pred": {"labels": ["tx.origin Misuse"], "primary_severity": "High"}}
+{"id": "eval-owasp-random", "pred": {"labels": ["Insecure Randomness"], "primary_severity": "High"}}
+{"id": "eval-owasp-dos-loop", "pred": {"labels": ["DoS via Unbounded Loop"], "primary_severity": "High"}}
+{"id": "eval-owasp-unchecked-call", "pred": {"labels": ["Unchecked Call"], "primary_severity": "Medium"}}
+{"id": "eval-tob-delegatecall-any", "pred": {"labels": ["Delegatecall Misuse", "Access Control"], "primary_severity": "High"}}
+{"id": "eval-tob-oracle-spot", "pred": {"labels": [], "primary_severity": "Informational"}}
+{"id": "eval-tob-storage-collide", "pred": {"labels": ["Storage Collision"], "primary_severity": "High"}}
+{"id": "eval-immunefi-slippage", "pred": {"labels": [], "primary_severity": "Informational"}}
+{"id": "eval-immunefi-fee-transfer", "pred": {"labels": [], "primary_severity": "Informational"}}
+{"id": "eval-immunefi-pause-bypass", "pred": {"labels": ["Bypass Pause / Circuit Breaker"], "primary_severity": "High"}}
