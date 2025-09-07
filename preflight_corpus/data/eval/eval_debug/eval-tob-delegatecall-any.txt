@@ -1,1 +1,0 @@
-{"labels":["Delegatecall Misuse","Access Control"],"primary_severity":"High"}

@@ -1,1 +1,0 @@
-{"labels":["Insecure Randomness"], "primary_severity":"High"}

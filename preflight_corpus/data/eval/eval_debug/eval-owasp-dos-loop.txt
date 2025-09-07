@@ -1,1 +1,0 @@
-{"labels":["DoS via Unbounded Loop"], "primary_severity":"High"}
