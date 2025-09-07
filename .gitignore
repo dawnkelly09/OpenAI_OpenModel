@@ -1,0 +1,39 @@
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+
+# --- Python ---
+venv/
+.env/
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# --- Conversion/cache ---
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# --- Node junk (sometimes present if repos were cloned) ---
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# --- Build artifacts ---
+dist/
+build/
+site/
+.cache/
+
+# --- GitHub Pages / MkDocs / Sphinx output ---
+/public/
+/docs_build/
+/htmlcov/
+/_build/
+
+# --- Editor configs ---
+.vscode/
+.idea/
