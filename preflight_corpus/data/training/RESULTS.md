@@ -77,3 +77,25 @@ It does seem clear some fine-tuning with explicit buggy versus fixed code exampl
 
 The `seed_examples.jsonl` was split into three files (train, eval, and test) to facilitate creation of Supervised Fine-Tuning (SFT) prompt-response pairs for training the model via demonstration of desired correct responses. The `render_sft.py` script was used to ingest the `seed_examples.jsonl` rows and write corresponding prompt/response pairs for training. 
 
+- **`preflight-sft` Dataset on Hugging Face**: https://huggingface.co/datasets/dawnkelly09/preflight-sft
+
+This was the point at which I discovered, due to hardware and budgetary constraints, I would not be able to actually train the `gpt-oss:20b` model. Rather than give up entirely, I opted to validate the training pipeline using Hugging Face and a lighter model.
+
+- **Preflight Train Space on Hugging Face**: https://huggingface.co/spaces/dawnkelly09/preflight-train
+
+On a T4 I fine-tuned SmolLM2-1.7B with QLoRA and reduced validation perplexity from 22.78 → 13.87 (−39%), corresponding to a loss drop of 0.496 nats/token.
+
+Under the same data and adapter recipe, I expect a comparable loss reduction on `gpt-oss-20b`. In practice that means: loss_after(20B) ≈ loss_before(20B) − 0.496 (equivalently, ppl_after(20B) ≈ 0.61 × ppl_before(20B)).
+
+Larger models are typically at least as sample-efficient, so absolute post-train performance should be better (lower ppl, higher downstream scores), though the relative percentage drop can vary with optimization details.
+
+## Evaluating Training Outcome
+
+The effectiveness of the training was evaluated on a held-out validation split using a teacher forcing technique of feeding true tokens in, asking the model "What probability do you assign to the next true token?", and using that feedback to determine loss and exponentiate perplexity.
+
+- **Model**: SmolLM2-1.7B
+- **Before fine-tune**: loss = 3.1259, ppl = 22.78
+- **After fine-tune**: loss = 2.6296, ppl = 13.87
+- **Perplexity factor**: 13.87 / 22.78 ≈ 0.61 => -39% ppl
+
+As I understand this data, the SmolLM2-1.7B model's 39% decrease in validation perplexity translates to the model being far less "surprised" (loss) by smart contract vulnerability domain text than prior to training. This should translate to materially better next-token predictions on domain data. Training details would drive final numbers but, it feels reasonable to expect similar direction and scale of gain on the larger gpt-oss:20b model. 
