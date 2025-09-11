@@ -98,4 +98,4 @@ The effectiveness of the training was evaluated on a held-out validation split u
 - **After fine-tune**: loss = 2.6296, ppl = 13.87
 - **Perplexity factor**: 13.87 / 22.78 ≈ 0.61 => -39% ppl
 
-As I understand this data, the SmolLM2-1.7B model's 39% decrease in validation perplexity translates to the model being far less "surprised" (loss) by smart contract vulnerability domain text than prior to training. This should translate to materially better next-token predictions on domain data. Training details would drive final numbers but, it feels reasonable to expect similar direction and scale of gain on the larger gpt-oss:20b model. 
+As I understand this data, the SmolLM2-1.7B model's 39% decrease in validation perplexity translates to the model being far less "surprised" (loss) by smart contract vulnerability domain text than prior to training. Using the same data and LoRA recipe should translate to materially better next-token predictions on domain data in larger models. Training details would drive final numbers but, it feels reasonable to expect similar direction and scale of gain with the larger gpt-oss:20b model. 
