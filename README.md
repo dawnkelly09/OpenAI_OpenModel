@@ -1,5 +1,7 @@
 # PreFlight Audit — Solidity Contract Analyzer (SmolLM2 + LoRA)
 
+Note: this started as an effort to work locally with OpenAI's gpt-oss:20b open source model. You can see the baseline eval [here](https://github.com/dawnkelly09/OpenAI_OpenModel/blob/c507539b7a9bde3e96f10ed8fd02dc1c7dc7a869/preflight_corpus/data/eval/run_baseline_eval_stream.py#L3C1-L3C22). Ultimately, I learned I could not train this model due to hardware constraints, so I decided to validate the pipleline instead. 
+
 PreFlight Audit is a tiny web app + API that analyzes Solidity contracts and returns a structured security report (JSON + readable Markdown).
 
 It uses a small open-weights base model (SmolLM2-1.7B-Instruct) and can optionally attach a LoRA adapter fine-tuned on auditing data.
