@@ -87,7 +87,7 @@ trove-classifiers==2023.9.19
 typing-inspect==0.9.0
 typing_extensions==4.8.0
 urllib3==2.0.5
-virtualenv==20.24.5
+virtualenv==20.36.1
 Werkzeug==3.0.1
 wrapt==1.15.0
 xattr==0.10.1
