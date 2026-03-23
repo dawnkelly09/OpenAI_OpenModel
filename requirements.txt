@@ -15,7 +15,7 @@ click==8.1.6
 colorama==0.4.6
 cors==1.0.1
 crashtest==0.4.1
-cryptography==41.0.4
+cryptography==46.0.5
 dataclasses-json==0.6.1
 Deprecated==1.2.14
 distlib==0.3.7
